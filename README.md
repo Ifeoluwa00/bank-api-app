@@ -38,12 +38,15 @@ The API you are to develop should be able to handle a transfer request of the fo
 
 ### Endpoints to test
 
-| Method       | Endpoint     | Enable a user to:    |
+| Method       | Endpocint     | Enable a user to:    |
 | :------------- | :---------- | :----------- |
 | POST | /create-account  | Enable user to create an account stored in the balance table    |
 | GET   | /balance/:accountNumber | Getting balance for a particular account number |
 | GET   | /balance | Getting all accounts and their balance |
 | POST   | /transfer | To make a transaction to another account |
+
+Get all transaction history
+Get a single transaction
 
 ## Test coverage
 - Make sure you write test to cover your application using supertest

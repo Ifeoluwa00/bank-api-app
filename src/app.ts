@@ -3,7 +3,8 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-
+import balanceRouter from "./routes/balance";
+import transactionRouter from "./routes/transaction";
 const app = express();
 
 // view engine setup
@@ -15,6 +16,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
+
+app.use("/transaction", transactionRouter);
+app.use("/balance", balanceRouter);
+app.use("*", (req, res) => {
+ res.status(404).json({
+  error: 'invalid route',
+  msg: "the page you're looking for doesnt exist"
+  })
+})
+
+
+// app.use("*", (req, res) => {
+//  res.status(404).json({
+//   error: 'invalid route',
+//   msg: "the page you're looking for doesnt exist"
+//   })
+// })
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
