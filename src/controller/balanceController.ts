@@ -4,8 +4,8 @@ import { getPostData, UserObj } from "../utilsBalance"
 import { Request, Response } from 'express';
 
 
-//@desc Get All Product
-//@route Get /api/products
+//@desc Get All balance
+//@route Get /balance
 async function getProducts(req: Request, res:Response) {
 
   const products = await Product.findAll()
@@ -18,8 +18,8 @@ async function getProducts(req: Request, res:Response) {
   }
 }
 
-//@desc Get single Product
-//@route Get /api/product/:id
+//@desc Get single balance
+//@route Get /balance/account_Number
 async function getProduct(req: Request, res:Response) {
   try {
     const product = await Product.findById(+req.params.acc)
@@ -37,8 +37,8 @@ async function getProduct(req: Request, res:Response) {
   }
 }
  
-//@desc Create a Product
-//@route POST /api/products
+//@desc Create a balance
+//@route POST /balance
 async function createProduct(req: Request, res:Response) {
   try {
     
