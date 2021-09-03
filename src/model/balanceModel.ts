@@ -6,6 +6,7 @@ const dbPath = path.resolve(__filename, "../../../database/balance.json");
 function getDb() {
  if (!fs.existsSync(dbPath)) {
    fs.writeFileSync(dbPath, JSON.stringify([]))
+ 
  }
  
  return JSON.parse(fs.readFileSync(dbPath, "utf-8"));

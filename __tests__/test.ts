@@ -6,7 +6,7 @@ describe("All Routes", () => {
   await request(app)
      .post("/balance")
      .send({
-      account_Number: 2232423711,
+      account_Number: 2232423716,
       balance: 2000
       
      })
@@ -19,7 +19,7 @@ describe("All Routes", () => {
   await request(app)
      .post("/balance")
      .send({
-      account_Number: 8485856879,
+      account_Number: 3345267812,
       balance: 2000
       
      })
@@ -33,7 +33,7 @@ describe("All Routes", () => {
       await request(app)
          .post("/balance")
          .send({
-          account_Number: 848585687,
+          account_Number: 334526781,
           balance: 2000
           
          })
@@ -47,7 +47,7 @@ describe("All Routes", () => {
       await request(app)
          .post("/balance")
          .send({
-          account_Number: 848585687111,
+          account_Number: 334526781211,
           balance: 2000
           
          })
@@ -69,7 +69,7 @@ describe("All Routes", () => {
  
      test("it should get single account", async () => {
       await request(app)
-        .get("/balance/8485856889")
+        .get("/balance/1234567891")
         .expect(200)
         .expect("Content-Type", "application/json")
      });
@@ -126,7 +126,7 @@ describe("All Routes", () => {
     
         test("it should get a single transaction made", async () => {
          await request(app)
-           .get("/transaction/d1838edc60fe88e79b3d6b3b1e6ab742")
+           .get("/transaction/d492a7828c16ffdbe9a4eb6cac3c20cf")
            .expect(200)
            .expect("Content-Type", "application/json")
            });
